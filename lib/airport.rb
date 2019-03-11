@@ -1,5 +1,15 @@
 class Airport
-  def instruct_to_land
+  attr_reader :planes
+  
+  def initialize
+    @planes = []
+  end
 
+  def instruct_to_land(plane)
+    @planes << plane
+  end
+
+  def cleared_for_take_off(plane)
+    @planes.delete(plane)
   end
 end
